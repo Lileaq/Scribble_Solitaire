@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import {CardGame} from "./js/game.js"
+        new CardGame()
+    </script>
+    <title>Scribble_Solitaire</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.ico?v=1">
+</head>
+<body>
+    <div class="winning" id="winning">
+        <button id="new_game_2"></button>
+    </div>
+    <dialog id="card_back">
+        <h1>♤ Cards ♤</h1>
+        <div class="buttons_cont">
+            <button onclick="changeBack('pink')">PINK</button>
+            <button onclick="changeBack('blue')">BLUE</button>
+            <button onclick="changeBack('green')">GREEN</button>
+        </div>
+        <h1>♢ Background ♢</h1>
+        <div class="buttons_cont">
+            <button onclick="changeBackground('pink')">PINK</button>
+            <button onclick="changeBackground('blue')">BLUE</button>
+            <button onclick="changeBackground('green')">GREEN</button>
+        </div>
+        <button onclick="document.getElementById('card_back').close()" id="quit">QUIT</button>
+    </dialog>
+    <div class="buttons">
+        <button id="themes"></button>
+    </div>
+    <div class="cont" id="main_cont">
+        <div id="draw_field" class="card_pile top_row" ></div>
+        <div id="discard_field" class="card_pile top_row" ></div>
+        <div></div>
+    </div>
+    <div class="buttons">
+        <button id="new_game"></button>
+        <button id="undo"></button>
+    </div>
+</body>
+</html>

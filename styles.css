@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.cont{
+    background-color: rgb(220, 154, 220);
+    height: 100%;
+    max-height: 890px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 1fr 4fr;
+    gap: 0px 10px; 
+    justify-items: center;
+    background-image: url('img/playfield/paper.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+    width: 100vw;
+    background-image: url('img/backgrounds/pink.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+
+
+.card_pile{
+    background-image:url('img/backs/card.png') ;
+    display:flex;
+    font-weight: bold;
+    font-family: 'Comic Sans MS';
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    -webkit-user-select: none;        
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 140px;
+    border-radius: 4px;
+}
+
+.card{
+    position: absolute;
+    width: 100px;
+    height: 140px;
+    transition: top 0.3s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid rgb(95, 94, 94);
+    border-radius: 4px;
+}
+
+.ghost_card{
+    width: 100px;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    border: 3px solid rgb(95, 94, 94);
+}
+
+.card_pile div{
+    padding: 10px;
+}
+
+#draw_field:active{
+    background-color: rgb(178, 47, 69);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px;
+}
+.buttons button{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.top_row{
+    border: 3px solid rgb(95, 94, 94);
+    justify-content: center;
+}
+
+.winning{
+    background-color:aqua ;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background-image: url(img/backgrounds/you_won.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 100px;
+}
+
+#new_game{
+    background-image: url('img/buttons/new_game.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0px;
+    height: 500px;
+    width: 50px;
+    transition: 0.1s;
+}
+#new_game_2{
+    background-image: url('img/buttons/new_game_2.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0px;
+    width: 1000px;
+    height: 100px;
+    transition: 0.1s;
+}
+
+#themes{
+    background-image: url('img/buttons/themes.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0px;
+    height: 400px;
+    width: 60px;
+    transition: 0.1s;
+}
+
+#undo{
+    background-image: url('img/buttons/undo.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0px;
+    height: 235px;
+    width: 110px;
+    transition: 0.1s;
+}
+#new_game:hover,#new_game_2:hover,#themes:hover,#undo:hover{
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+#card_back{
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid rgb(95, 94, 94);
+    background-image: url('img/backs/card_light.png');
+    font-family: 'Courier New', Courier, monospace;
+    .buttons_cont{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    button{
+        padding: 10px;
+        margin: 10px;
+        width: 90px;
+        border-radius: 5px;
+        border: 2px solid rgb(105, 4, 4);
+        font-weight: bold;
+        color: rgb(105, 4, 4);
+        background-color: rgb(246, 177, 177);
+    }
+    button:hover{
+        background-color: rgb(245, 209, 209);
+    }
+    #quit{
+        width: 90%;
+        margin: 0px;
+        margin-top: 10px;
+    }
+}
