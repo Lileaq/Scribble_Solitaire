@@ -35,7 +35,7 @@ export class CardGame{
     ShuffleDeck(){
         for (let i = this.card_deck.length - 1; i > 0; i--) { 
             const j = Math.floor(Math.random() * (i + 1));
-            [this.card_deck[i], this.card_deck[j]] = [this.card_deck[j], this.card_deck[i]];
+            [this.card_deck[i], this.card_deck[j]] = [this.card_deck[j], this.card_deck[i]]
           } 
     }
     MakePiles(){
@@ -59,7 +59,6 @@ export class CardGame{
     }
     MakeDrawPiles(){
         this.card_deck.unshift(null)
-        console.log(this.card_deck)
         let draw_field = document.getElementById('draw_field')
         draw_field.style.backgroundImage = `url(img/backs/${pasjans.back_color}.png)`
         let discard_field = document.getElementById('discard_field')
@@ -69,7 +68,6 @@ export class CardGame{
             draw_pile_sond.play()
             this.saveStatus(true)
             this.card_queque_number++
-            console.log('klikam i jest ',this.card_queque_number)
             if(this.card_queque_number > this.card_deck.length-1){
                 this.card_queque_number = 0
             } 
@@ -78,7 +76,6 @@ export class CardGame{
                 const cardElem = this.card_deck[this.card_queque_number].DrawCard(0,'draw_pile')
                 discard_field.appendChild(cardElem)
             }
-            console.log(this.card_deck[this.card_queque_number])
             if(this.card_queque_number == this.card_deck.length-1){
                 draw_field.style.backgroundImage = `url()`
             }
@@ -125,7 +122,6 @@ export class CardGame{
             const desired_state = this.memory.pop()
 
             this.card_deck = desired_state.deck.map(c => c instanceof Card ? c.Clone() : null);
-            console.log('nowy card deck ',this.card_deck)
             this.card_queque_number = desired_state.deck_index
 
             this.game_piles = desired_state.g_piles.map(p => p.Clone())
@@ -135,7 +131,6 @@ export class CardGame{
             this.RedrawPiles()
             const discard_field = document.getElementById('discard_field')
             discard_field.innerHTML = ''
-            console.log('przywracam z indeks ',this.card_queque_number)
             if (this.card_queque_number > 0 && this.card_queque_number < this.card_deck.length) {
                 const card = this.card_deck[this.card_queque_number]
                 if (card instanceof Card) {
@@ -148,7 +143,6 @@ export class CardGame{
         }
     }
     saveStatus(deck){
-        console.log('zapisuje teraz ',deck)
         if(this.memory.length == 5){
             this.memory.shift()
         }
@@ -240,7 +234,6 @@ function changeBack(color){
 }
 
 function changeBackground(color){
-    console.log('bg chane')
     document.body.style.backgroundImage = `url(img/backgrounds/${color}.png)`
     document.getElementById('card_back').close()
 }
